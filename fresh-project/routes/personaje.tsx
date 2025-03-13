@@ -27,18 +27,15 @@ export const handler: Handlers = {
   },
 };
 
-
 export default function Page(props: PageProps<{ character: any }>) {
-
   const { character } = props.data;
 
   return (
-    <div>
+    <div className="container">
       <h1 className="titulos">Buscador de personajes</h1>
       <div className="mostrar">
-        <h2>Esto es el buscador</h2>
         {character ? (
-          <div>
+          <div className="character-info">
             <h1>{character.name}</h1>
             <p>Altura: {character.height}</p>
             <p>Peso: {character.mass}</p>
@@ -49,10 +46,9 @@ export default function Page(props: PageProps<{ character: any }>) {
             <p>Género: {character.gender}</p>
           </div>
         ) : (
-          <p>No se encontró el personaje</p>
+          <p className="error-message">No se ha encontrado el personaje</p>
         )}
       </div>
     </div>
   );
 }
-
